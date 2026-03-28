@@ -62,7 +62,7 @@ export default function HomePage() {
       {/* Proof Points */}
       <section className="bg-brand-surface py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="section-label mb-12">How we work</p>
+          <h2 className="section-label mb-12">How we work</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {proofPoints.map(({ title, body }) => (
               <div key={title} className="bg-brand-white p-8 border border-gray-100">

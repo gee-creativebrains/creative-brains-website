@@ -60,7 +60,7 @@ export default function AboutPage() {
       {/* Values */}
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="section-label mb-12">How we work</p>
+          <h2 className="section-label mb-12">How we work</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {values.map(({ title, body }) => (
               <div key={title}>
@@ -81,7 +81,7 @@ export default function AboutPage() {
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="group">
                 <div className="aspect-square bg-gray-200 mb-4 overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">
+                  <div className="w-full h-full flex items-center justify-center text-gray-600 text-sm">
                     Photo
                   </div>
                 </div>
