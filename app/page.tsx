@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Creative Brains — Brands That Mean Business",
+  title: "Creative Brains — Think. Build. Launch.",
   description:
     "Creative Brains is a full-service creative studio — strategy, design, copy, and tech — built for businesses that can't afford to wait.",
 };
@@ -84,9 +84,11 @@ export default function HomePage() {
               Creative Studio
             </p>
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] mb-8 text-white">
-              Brands that
+              Think.
               <br />
-              mean business.
+              Build.
+              <br />
+              Launch.
             </h1>
             <p className="text-xl text-white/70 max-w-2xl mb-12 leading-relaxed">
               We are a full-service creative studio — strategy, design, copy,
