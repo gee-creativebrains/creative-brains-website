@@ -20,95 +20,134 @@ const values = [
     title: "Outcomes over aesthetics",
     body: "Beautiful work that doesn't perform is just decoration. We anchor every brief in business goals — without sacrificing craft.",
   },
+  {
+    title: "One team, zero handoffs",
+    body: "The people who think are the people who build. Strategy and execution in the same room means sharper ideas, faster.",
+  },
+];
+
+const stats = [
+  { number: "5+", label: "Years in business" },
+  { number: "80+", label: "Projects shipped" },
+  { number: "40+", label: "Happy clients" },
+  { number: "100%", label: "On-time delivery" },
+];
+
+const team = [
+  { initials: "CB", name: "Creative Director", title: "Strategy & Vision" },
+  { initials: "DS", name: "Design Lead", title: "Identity & UI" },
+  { initials: "CW", name: "Copy Lead", title: "Brand Voice & Content" },
+  { initials: "TL", name: "Tech Lead", title: "Web & Digital" },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-24 bg-brand-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="section-label mb-6">About us</p>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] max-w-3xl">
+      {/* Page Hero — surface-alt bg per spec */}
+      <section className="pt-32 pb-24 bg-brand-surface">
+        <div className="max-w-content mx-auto px-6">
+          <p className="section-label mb-6">Our Story</p>
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] max-w-3xl text-brand-black">
             The team that thinks and does.
           </h1>
+          <p className="mt-8 text-xl text-brand-muted max-w-2xl leading-relaxed">
+            We built Creative Brains because the best creative work happens when
+            strategy and execution are never separated.
+          </p>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="py-24 bg-brand-surface">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl">
-            <p className="text-xl leading-relaxed text-brand-black mb-6">
-              Most agencies split strategy from creativity. Strategists write
-              decks. Creatives execute. The handoff is where ideas die.
-            </p>
-            <p className="text-xl leading-relaxed text-brand-muted mb-6">
-              At Creative Brains, the people who think are the people who
-              build. That&apos;s what makes the work sharper — and the process
-              faster.
-            </p>
-            <p className="text-xl leading-relaxed text-brand-muted">
-              We built Creative Brains because the best creative work happens
-              when strategy and execution are never separated. One team. One
-              brief. Zero translation loss.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Mission + Values — 2-col */}
+      <section className="py-24 bg-white">
+        <div className="max-w-content mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16">
+            {/* Mission */}
+            <div>
+              <p className="section-label mb-6">Our Mission</p>
+              <h2 className="text-3xl font-bold tracking-tight mb-6">
+                Creative work with no translation loss.
+              </h2>
+              <p className="text-brand-muted leading-relaxed mb-4">
+                Most agencies split strategy from creativity. Strategists write
+                decks. Creatives execute. The handoff is where ideas die.
+              </p>
+              <p className="text-brand-muted leading-relaxed">
+                At Creative Brains, the people who think are the people who
+                build. That&apos;s what makes the work sharper — and the process
+                faster. One team. One brief. Zero translation loss.
+              </p>
+            </div>
 
-      {/* Values */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="section-label mb-12">How we work</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {values.map(({ title, body }) => (
-              <div key={title}>
-                <div className="w-8 h-0.5 bg-brand-accent mb-6" />
-                <h3 className="text-xl font-semibold mb-3">{title}</h3>
-                <p className="text-brand-muted leading-relaxed">{body}</p>
+            {/* Values grid */}
+            <div>
+              <p className="section-label mb-6">Our Values</p>
+              <div className="grid grid-cols-2 gap-6">
+                {values.map(({ title, body }) => (
+                  <div key={title}>
+                    <div className="w-6 h-0.5 bg-brand-accent mb-4" />
+                    <h3 className="text-sm font-semibold mb-2 text-brand-black">
+                      {title}
+                    </h3>
+                    <p className="text-brand-muted text-sm leading-relaxed">
+                      {body}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Team — placeholder */}
+      {/* Team */}
       <section className="py-24 bg-brand-surface">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-content mx-auto px-6">
           <p className="section-label mb-12">Meet the brains</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="group">
-                <div className="aspect-square bg-gray-200 mb-4 overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-gray-600 text-sm">
-                    Photo
-                  </div>
+            {team.map(({ initials, name, title }) => (
+              <div key={name} className="group">
+                <div className="aspect-square bg-brand-accent rounded-md mb-4 flex items-center justify-center">
+                  <span className="text-white text-2xl font-bold">
+                    {initials}
+                  </span>
                 </div>
-                <p className="font-semibold text-sm">Team Member {i}</p>
-                <p className="text-brand-muted text-sm">Role</p>
+                <p className="font-semibold text-sm text-brand-black">{name}</p>
+                <p className="text-brand-muted text-sm">{title}</p>
               </div>
             ))}
           </div>
           <p className="mt-8 text-sm text-brand-muted italic">
-            Team bios coming soon.
+            Individual bios and photos coming soon.
           </p>
         </div>
       </section>
 
+      {/* Impact Stats Bar */}
+      <section className="py-16 bg-brand-black text-white">
+        <div className="max-w-content mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {stats.map(({ number, label }) => (
+              <div key={label}>
+                <p className="text-4xl md:text-5xl font-extrabold text-brand-accent mb-2">
+                  {number}
+                </p>
+                <p className="text-white/60 text-sm">{label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-24 bg-brand-black text-brand-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold tracking-tight mb-6">
-            Let&apos;s make something worth talking about.
+      <section className="py-24 bg-brand-surface">
+        <div className="max-w-content mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-brand-black">
+            Want to work with us?
           </h2>
-          <p className="text-gray-400 mb-8 max-w-lg">
+          <p className="text-brand-muted mb-8 max-w-lg mx-auto">
             Tell us about your project. We&apos;ll respond within 24 hours.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center px-8 py-4 bg-brand-white text-brand-black text-sm font-medium tracking-wide hover:bg-brand-accent hover:text-brand-white transition-colors duration-200"
-          >
+          <Link href="/contact" className="btn-secondary">
             Get in touch
           </Link>
         </div>
