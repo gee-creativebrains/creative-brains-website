@@ -3,18 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-const nav = [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
-];
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang, t, toggleLang } = useLanguage();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -25,6 +21,12 @@ export default function Header() {
 
   // On home page: transparent until scrolled; on other pages: always solid
   const solid = !isHome || scrolled;
+
+  const nav = [
+    { label: t.nav.about, href: "/about" },
+    { label: t.nav.services, href: "/services" },
+    { label: t.nav.contact, href: "/contact" },
+  ];
 
   return (
     <header
@@ -64,11 +66,24 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
+          {/* Language toggle */}
+          <button
+            onClick={toggleLang}
+            aria-label={lang === "en" ? "Switch to German" : "Zu Englisch wechseln"}
+            className={`hidden md:inline-flex items-center text-xs font-semibold tracking-widest uppercase gap-1 transition-colors ${
+              solid ? "text-brand-muted hover:text-brand-black" : "text-white/60 hover:text-white"
+            }`}
+          >
+            <span className={lang === "de" ? "text-brand-accent" : ""}>DE</span>
+            <span className="opacity-40">|</span>
+            <span className={lang === "en" ? "text-brand-accent" : ""}>EN</span>
+          </button>
+
           <Link
             href="/contact"
             className="hidden md:inline-flex btn-primary text-xs py-2 px-4"
           >
-            Start a project
+            {t.nav.startProject}
           </Link>
 
           {/* Mobile hamburger */}
@@ -109,8 +124,17 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
             className="btn-primary mt-4 self-start"
           >
-            Start a project
+            {t.nav.startProject}
           </Link>
+          {/* Mobile language toggle */}
+          <button
+            onClick={toggleLang}
+            className="self-start text-sm font-semibold tracking-widest uppercase text-white/60 hover:text-white transition-colors flex items-center gap-1"
+          >
+            <span className={lang === "de" ? "text-brand-accent" : ""}>DE</span>
+            <span className="opacity-40">|</span>
+            <span className={lang === "en" ? "text-brand-accent" : ""}>EN</span>
+          </button>
         </div>
       )}
     </header>

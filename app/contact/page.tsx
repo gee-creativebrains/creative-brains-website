@@ -1,23 +1,22 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Start a project with Creative Brains. Tell us what you're building — we'll respond within 24 hours.",
-};
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function ContactPage() {
+  const { t } = useLanguage();
+  const c = t.contact;
+
   return (
     <>
       {/* Hero */}
       <section className="pt-32 pb-16 bg-brand-white">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="section-label mb-6">Work with us</p>
+          <p className="section-label mb-6">{c.tag}</p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] max-w-3xl">
-            Let&apos;s make something worth talking about.
+            {c.hero}
           </h1>
           <p className="mt-8 text-xl text-brand-muted max-w-xl leading-relaxed">
-            Tell us about your project. We&apos;ll respond within 24 hours.
+            {c.subhero}
           </p>
         </div>
       </section>
@@ -34,14 +33,14 @@ export default function ContactPage() {
                     htmlFor="name"
                     className="section-label block mb-2"
                   >
-                    Your name
+                    {c.labelName}
                   </label>
                   <input
                     id="name"
                     name="name"
                     type="text"
                     required
-                    placeholder="Jane Smith"
+                    placeholder={c.placeholderName}
                     className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-brand-black transition-colors"
                   />
                 </div>
@@ -50,13 +49,13 @@ export default function ContactPage() {
                     htmlFor="company"
                     className="section-label block mb-2"
                   >
-                    Company
+                    {c.labelCompany}
                   </label>
                   <input
                     id="company"
                     name="company"
                     type="text"
-                    placeholder="Acme Inc."
+                    placeholder={c.placeholderCompany}
                     className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-brand-black transition-colors"
                   />
                 </div>
@@ -67,14 +66,14 @@ export default function ContactPage() {
                   htmlFor="email"
                   className="section-label block mb-2"
                 >
-                  Email
+                  {c.labelEmail}
                 </label>
                 <input
                   id="email"
                   name="email"
                   type="email"
                   required
-                  placeholder="jane@acme.com"
+                  placeholder={c.placeholderEmail}
                   className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-brand-black transition-colors"
                 />
               </div>
@@ -84,20 +83,17 @@ export default function ContactPage() {
                   htmlFor="service"
                   className="section-label block mb-2"
                 >
-                  What do you need?
+                  {c.labelService}
                 </label>
                 <select
                   id="service"
                   name="service"
                   className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-brand-black transition-colors bg-white"
                 >
-                  <option value="">Select a service</option>
-                  <option>Brand Strategy</option>
-                  <option>Identity &amp; Design</option>
-                  <option>Copywriting &amp; Content</option>
-                  <option>Digital &amp; Web</option>
-                  <option>Campaigns</option>
-                  <option>Something else</option>
+                  <option value="">{c.selectDefault}</option>
+                  {c.serviceOptions.map((opt) => (
+                    <option key={opt}>{opt}</option>
+                  ))}
                 </select>
               </div>
 
@@ -106,14 +102,14 @@ export default function ContactPage() {
                   htmlFor="message"
                   className="section-label block mb-2"
                 >
-                  Tell us about your project
+                  {c.labelMessage}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
                   required
-                  placeholder="What are you building? What's the goal? Any deadline or budget in mind?"
+                  placeholder={c.placeholderMessage}
                   className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-brand-black transition-colors resize-none"
                 />
               </div>
@@ -122,25 +118,20 @@ export default function ContactPage() {
                 type="submit"
                 className="btn-primary w-full justify-center py-4"
               >
-                Send message
+                {c.submitButton}
               </button>
 
               <p className="text-xs text-brand-muted text-center">
-                We respond within 24 hours on business days.
+                {c.submitNote}
               </p>
             </form>
 
             {/* Sidebar info */}
             <div className="space-y-10">
               <div>
-                <p className="section-label mb-4">What happens next</p>
+                <p className="section-label mb-4">{c.whatNextLabel}</p>
                 <ol className="space-y-4">
-                  {[
-                    "We review your brief within 24 hours.",
-                    "We schedule a free 30-minute discovery call.",
-                    "We share a tailored proposal with scope, timeline, and investment.",
-                    "We kick off. Fast.",
-                  ].map((step, i) => (
+                  {c.whatNext.map((step, i) => (
                     <li key={i} className="flex gap-4">
                       <span className="section-label mt-0.5 flex-shrink-0">
                         0{i + 1}
@@ -152,14 +143,9 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <p className="section-label mb-4">Good to know</p>
+                <p className="section-label mb-4">{c.goodToKnowLabel}</p>
                 <ul className="space-y-3">
-                  {[
-                    "The first conversation is free.",
-                    "The first idea is on us.",
-                    "No retainers required to start.",
-                    "Pricing is transparent from day one.",
-                  ].map((item) => (
+                  {c.goodToKnow.map((item) => (
                     <li key={item} className="flex gap-3 items-start">
                       <span className="text-brand-accent mt-0.5">→</span>
                       <span className="text-brand-muted">{item}</span>
