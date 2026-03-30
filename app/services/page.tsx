@@ -68,6 +68,18 @@ const services = [
       "Measurement and optimisation",
     ],
   },
+  {
+    number: "06",
+    title: "MVP & Venture Building",
+    oneliner: "From idea to product-market fit — in 2–3 months",
+    body: "We're more than an agency — we're venture partners. You have the idea; we build it together with real skin in the game. No blind hourly billing: a partner who thinks, builds, and shares responsibility. From first sketch to first real users, in 2–3 months.",
+    checklist: [
+      "Idea validation & market testing",
+      "Product design & engineering",
+      "Go-to-market strategy",
+      "Service-for-equity / venture partner model",
+    ],
+  },
 ];
 
 const howItWorks = [

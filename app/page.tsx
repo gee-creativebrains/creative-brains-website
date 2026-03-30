@@ -40,6 +40,7 @@ const services = [
   "Copywriting & Content",
   "Digital & Web",
   "Campaigns",
+  "MVP & Venture Building",
 ];
 
 const testimonials = [
