@@ -66,7 +66,7 @@ export default function AboutPage() {
         <div className="max-w-content mx-auto px-6">
           <p className="section-label mb-12">{a.teamLabel}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {a.team.map(({ initials, name, title }) => (
+            {a.team.map(({ initials, name, title, bio }) => (
               <div key={name} className="group">
                 <div className="aspect-square bg-brand-accent rounded-md mb-4 flex items-center justify-center">
                   <span className="text-white text-2xl font-bold">
@@ -74,7 +74,8 @@ export default function AboutPage() {
                   </span>
                 </div>
                 <p className="font-semibold text-sm text-brand-black">{name}</p>
-                <p className="text-brand-muted text-sm">{title}</p>
+                <p className="text-brand-muted text-sm mb-2">{title}</p>
+                <p className="text-brand-muted text-xs leading-relaxed">{bio}</p>
               </div>
             ))}
           </div>

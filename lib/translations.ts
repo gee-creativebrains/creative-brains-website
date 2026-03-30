@@ -17,7 +17,7 @@ const translations = {
     },
     home: {
       tag: "Creative Studio",
-      hero: "Brands that\nmean business.",
+      hero: "Think.\nBuild.\nLaunch.",
       subhero:
         "We are a full-service creative studio — strategy, design, copy, and tech — built for businesses that can't afford to wait.",
       ctaPrimary: "Start a project",
@@ -121,12 +121,12 @@ const translations = {
         },
       ],
       teamLabel: "Meet the brains",
-      teamBiosNote: "Individual bios and photos coming soon.",
+      teamBiosNote: "Photos coming soon.",
       team: [
-        { initials: "CB", name: "Creative Director", title: "Strategy & Vision" },
-        { initials: "DS", name: "Design Lead", title: "Identity & UI" },
-        { initials: "CW", name: "Copy Lead", title: "Brand Voice & Content" },
-        { initials: "TL", name: "Tech Lead", title: "Web & Digital" },
+        { initials: "AK", name: "Alex K.", title: "Creative Director", bio: "Drives creative vision and brand strategy. 10+ years building brands across DACH and beyond." },
+        { initials: "SB", name: "Sophie B.", title: "Design Lead", bio: "Crafts visual systems that are precise, human, and unmistakably on-brand." },
+        { initials: "CW", name: "Chris W.", title: "Copy Lead", bio: "Writes for clarity, edge, and impact — in German and English." },
+        { initials: "TL", name: "Tim L.", title: "Tech Lead", bio: "Builds fast, accessible web products that perform in the real world." },
       ],
       stats: [
         { number: "5+", label: "Years in business" },
@@ -402,13 +402,13 @@ const translations = {
           body: "Die Menschen, die denken, sind die Menschen, die bauen. Strategie und Umsetzung im selben Raum bedeutet schärfere Ideen, schneller.",
         },
       ],
-      teamLabel: "Lernen Sie die Köpfe kennen",
-      teamBiosNote: "Individuelle Biografien und Fotos folgen in Kürze.",
+      teamLabel: "Die Köpfe dahinter",
+      teamBiosNote: "Fotos folgen in Kürze.",
       team: [
-        { initials: "CB", name: "Creative Director", title: "Strategie & Vision" },
-        { initials: "DS", name: "Design Lead", title: "Identität & UI" },
-        { initials: "CW", name: "Copy Lead", title: "Markenstimme & Content" },
-        { initials: "TL", name: "Tech Lead", title: "Web & Digital" },
+        { initials: "AK", name: "Alex K.", title: "Creative Director", bio: "Verantwortet kreative Vision und Markenstrategie. 10+ Jahre Markenaufbau im DACH-Raum und darüber hinaus." },
+        { initials: "SB", name: "Sophie B.", title: "Design Lead", bio: "Entwickelt visuelle Systeme, die präzise, menschlich und unverwechselbar sind." },
+        { initials: "CW", name: "Chris W.", title: "Copy Lead", bio: "Schreibt mit Klarheit, Kante und Wirkung — auf Deutsch und Englisch." },
+        { initials: "TL", name: "Tim L.", title: "Tech Lead", bio: "Baut schnelle, barrierefreie Web-Produkte, die in der Praxis performen." },
       ],
       stats: [
         { number: "5+", label: "Jahre im Geschäft" },
