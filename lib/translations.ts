@@ -50,6 +50,8 @@ const translations = {
           body: "Beautiful work that doesn't perform is just decoration. We anchor every brief in business goals without sacrificing craft.",
         },
       ],
+      worksLabel: "Selected Work",
+      worksCta: "Start a project",
       servicesTeaserLabel: "One team. Every discipline.",
       servicesTeaserHeadline: "So you don't have to coordinate across five agencies.",
       servicesTeaserBody:
@@ -331,6 +333,8 @@ const translations = {
           body: "Schöne Arbeit, die nicht performt, ist nur Dekoration. Wir verankern jedes Briefing in Geschäftszielen — ohne das Handwerk zu opfern.",
         },
       ],
+      worksLabel: "Ausgewählte Projekte",
+      worksCta: "Projekt starten",
       servicesTeaserLabel: "Ein Team. Alle Disziplinen.",
       servicesTeaserHeadline: "Damit Sie nicht fünf Agenturen koordinieren müssen.",
       servicesTeaserBody:
