@@ -18,7 +18,7 @@ const services = [
     number: "02",
     title: "Identity & Design",
     oneliner: "Visual systems that are unmistakably you",
-    body: "Logo, typography, colour system, motion, and every touchpoint in between. We build design systems that scale — not just a pretty logo for the launch deck.",
+    body: "Logo, typography, colour system, motion, and every touchpoint in between. We build design systems that scale — from your business card to your biggest campaign.",
   },
   {
     number: "03",
